@@ -52,7 +52,7 @@ const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: moonNormal })
 );
-moon.position.z = 50;
+moon.position.z = 30;
 moon.position.x = -10;
 scene.add(moon);
 
