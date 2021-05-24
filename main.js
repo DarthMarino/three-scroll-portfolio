@@ -52,7 +52,7 @@ const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: moonNormal })
 );
-moon.position.z = 30;
+moon.position.z = 40;
 moon.position.x = -10;
 scene.add(moon);
 
@@ -94,8 +94,8 @@ const moveCamera = () => {
   avatar.rotation.z += 0.01;
 
   camera.position.z = 5 + t * -0.01;
-  camera.position.x = -3 + t * -0.001;
-  camera.rotation.y = t * -0.0003;
+  camera.position.x = -3 + t * -0.003;
+  camera.rotation.y = t * -0.0004;
 };
 document.body.onscroll = moveCamera;
 
@@ -107,7 +107,9 @@ const animate = () => {
   box.rotation.x += 0.01;
   box.rotation.y += 0.005;
   box.rotation.z += 0.01;
-
+  if (document.body.getBoundingClientRect().bottom < 8) {
+    moon.rotation.y += 0.005;
+  }
   renderer.render(scene, camera);
 };
 
