@@ -2,9 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Three Portfolio</title>
+    <script>
+      function ready(callback) {
+        // in case the document is already rendered
+        if (document.readyState != "loading") callback();
+        // modern browsers
+        else if (document.addEventListener)
+          document.addEventListener("DOMContentLoaded", callback);
+        // IE <= 8
+        else
+          document.attachEvent("onreadystatechange", function () {
+            if (document.readyState == "complete") callback();
+          });
+      }
+
+      ready(function () {
+        return;
+      });
+    </script>
   </head>
   <body>
     <canvas id="bg"></canvas>

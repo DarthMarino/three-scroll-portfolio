@@ -1,20 +1,19 @@
 import "./style.css";
 
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // Setting up complete scene
 const scene = new THREE.Scene();
 
 // Adding Avatar Texture
-const avatarTexture = new THREE.TextureLoader().load("avatar.png");
+const avatarTexture = new THREE.TextureLoader().load("./public/avatar.png");
 
 // Adding Moon Texture and Normals
-const moonTexture = new THREE.TextureLoader().load("moon.jpg");
-const moonNormal = new THREE.TextureLoader().load("moonNormal.jpg");
+const moonTexture = new THREE.TextureLoader().load("./public/moon.jpg");
+const moonNormal = new THREE.TextureLoader().load("./public/moonNormal.jpg");
 
 // Adding Space texture
-const spaceTexture = new THREE.TextureLoader().load("space.jpg");
+const spaceTexture = new THREE.TextureLoader().load("./public/space.jpg");
 scene.background = spaceTexture;
 
 // Setting up camera that follow objects
@@ -43,7 +42,7 @@ scene.add(avatar);
 // Object Torus
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({
-  color: 0xcccccc,
+  color: "#A3A3A3",
 });
 const box = new THREE.Mesh(geometry, material);
 scene.add(box);
@@ -53,7 +52,7 @@ const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({ map: moonTexture, normalMap: moonNormal })
 );
-moon.position.z = 30;
+moon.position.z = 45;
 moon.position.x = -10;
 scene.add(moon);
 
@@ -95,8 +94,8 @@ const moveCamera = () => {
   avatar.rotation.z += 0.01;
 
   camera.position.z = 5 + t * -0.01;
-  camera.position.x = -3 + t * -0.0002;
-  camera.rotation.y = t * -0.0002;
+  camera.position.x = -3 + t * -0.001;
+  camera.rotation.y = t * -0.0003;
 };
 document.body.onscroll = moveCamera;
 
