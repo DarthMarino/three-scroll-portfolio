@@ -6,14 +6,14 @@ import * as THREE from "three";
 const scene = new THREE.Scene();
 
 // Adding Avatar Texture
-const avatarTexture = new THREE.TextureLoader().load("./public/avatar.png");
+const avatarTexture = new THREE.TextureLoader().load("/avatar.png");
 
 // Adding Moon Texture and Normals
-const moonTexture = new THREE.TextureLoader().load("./public/moon.jpg");
-const moonNormal = new THREE.TextureLoader().load("./public/moonNormal.jpg");
+const moonTexture = new THREE.TextureLoader().load("/moon.jpg");
+const moonNormal = new THREE.TextureLoader().load("/moonNormal.jpg");
 
 // Adding Space texture
-const spaceTexture = new THREE.TextureLoader().load("./public/space.jpg");
+const spaceTexture = new THREE.TextureLoader().load("/space.jpg");
 scene.background = spaceTexture;
 
 // Setting up camera that follow objects
